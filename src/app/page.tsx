@@ -8,7 +8,7 @@ export default function Home() {
     <div style={{ fontFamily: fb }}>
 
       {/* ── 1. NAV ── */}
-      <nav style={{
+      <nav className="m-nav" style={{
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
@@ -20,10 +20,9 @@ export default function Home() {
         zIndex: 100,
       }}>
         <div>
-          {/* Replace with: <img src="/astra-logo.svg" alt="Astra Agency" style={{ height: 36 }} /> */}
           <img src="/AA_Transparent_-_DARK_RED.png" alt="Astra Agency" style={{ height: 36, filter: "brightness(0)" }} />
         </div>
-        <button style={{
+        <button className="m-nav-cta" style={{
           fontFamily: fb,
           fontSize: "0.85rem",
           fontWeight: 500,
@@ -38,7 +37,7 @@ export default function Home() {
       </nav>
 
       {/* ── 2. HERO ── */}
-      <section style={{
+      <section className="m-hero" style={{
         padding: "7rem 4rem 6rem",
         maxWidth: 960,
         margin: "0 auto",
@@ -79,7 +78,7 @@ export default function Home() {
           is already in your ad account.
         </h1>
 
-        <p style={{
+        <p className="m-hero-sub" style={{
           fontSize: "1.05rem",
           fontWeight: 300,
           lineHeight: 1.75,
@@ -90,7 +89,7 @@ export default function Home() {
           You&apos;re spending $10K+ a month and you know it&apos;s not performing the way it should. The budget is going somewhere — we help you find exactly where, fix it, and turn it into the growth you&apos;ve been expecting.
         </p>
 
-        <button className="btn-primary">
+        <button className="btn-primary m-btn-full">
           See exactly where your money is going — free
         </button>
         <p style={{ marginTop: "0.9rem", fontSize: "0.75rem", color: "var(--g400)" }}>
@@ -99,7 +98,7 @@ export default function Home() {
       </section>
 
       {/* ── 3. TRUST BAR ── */}
-      <div style={{
+      <div className="m-trust" style={{
         borderTop: "0.5px solid var(--g200)",
         borderBottom: "0.5px solid var(--g200)",
         padding: "1.75rem 4rem",
@@ -117,19 +116,19 @@ export default function Home() {
           { num: "15+", lbl: "Clients scaled" },
         ].map((s, i, arr) => (
           <div key={i} style={{ display: "contents" }}>
-            <div style={{ textAlign: "center" }}>
+            <div className="m-trust-stat" style={{ textAlign: "center" }}>
               <div style={{ fontFamily: fd, fontSize: "1.8rem", fontWeight: 800, textTransform: "uppercase", color: "var(--red)" }}>{s.num}</div>
               <div style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.4)", marginTop: 2, letterSpacing: "0.1em", textTransform: "uppercase" }}>{s.lbl}</div>
             </div>
             {i < arr.length - 1 && (
-              <div style={{ width: "0.5px", height: "2rem", background: "rgba(255,255,255,0.1)" }} />
+              <div className="m-trust-divider" style={{ width: "0.5px", height: "2rem", background: "rgba(255,255,255,0.1)" }} />
             )}
           </div>
         ))}
       </div>
 
       {/* ── 4. LOGOS ── */}
-      <section style={{
+      <section className="m-logos" style={{
         padding: "3rem 4rem",
         background: "var(--white)",
         borderBottom: "0.5px solid var(--g200)",
@@ -145,7 +144,7 @@ export default function Home() {
         }}>
           Trusted by brands across USA &amp; Europe
         </p>
-        <div style={{
+        <div className="m-logos-grid" style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -174,7 +173,7 @@ export default function Home() {
       </section>
 
       {/* ── 5. PROBLEM ── */}
-      <section style={{
+      <section className="m-section" style={{
         padding: "7rem 4rem",
         borderTop: "0.5px solid var(--g200)",
         background: "var(--off)",
@@ -252,11 +251,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 7. CASE STUDIES ── */}
+      {/* ── 6. CASE STUDIES ── */}
       <CaseStudies />
 
-      {/* ── 8. TESTIMONIALS ── */}
-      <section style={{
+      {/* ── 7. TESTIMONIALS ── */}
+      <section className="m-section" style={{
         padding: "7rem 4rem",
         background: "var(--g100)",
         borderTop: "0.5px solid var(--g200)",
@@ -288,7 +287,7 @@ export default function Home() {
           }}>
             ⚠ Add real client quotes
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1rem" }}>
+          <div className="m-testi-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1rem" }}>
             {[
               {
                 quote: "Before Astra, we were spending $10K a month with no idea what was working. Within 60 days we crossed $1M in monthly revenue. The clarity alone was worth it.",
@@ -343,8 +342,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 9. HOW IT WORKS ── */}
-      <section style={{
+      {/* ── 8. HOW IT WORKS ── */}
+      <section className="m-section" style={{
         padding: "7rem 4rem",
         background: "var(--white)",
         borderTop: "0.5px solid var(--g200)",
@@ -361,7 +360,7 @@ export default function Home() {
           }}>
             Three phases. One goal: your revenue.
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2.5rem" }}>
+          <div className="m-process-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2.5rem" }}>
             {[
               {
                 phase: "Phase 01",
@@ -418,8 +417,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 10. CTA ── */}
-      <section style={{
+      {/* ── 9. CTA ── */}
+      <section className="m-cta" style={{
         background: "var(--red)",
         padding: "8rem 4rem",
         textAlign: "center",
@@ -446,7 +445,7 @@ export default function Home() {
           <p style={{ fontSize: "0.95rem", fontWeight: 300, color: "rgba(255,255,255,0.75)", lineHeight: 1.75, marginBottom: "2.5rem" }}>
             We&apos;ll look at your real account, show you exactly where the leaks are, and give you a clear picture of what growth actually looks like from here. No pitch. No pressure.
           </p>
-          <button className="btn-white">
+          <button className="btn-white m-btn-full">
             See exactly where your money is going →
           </button>
           <p style={{ marginTop: "1.25rem", fontSize: "0.72rem", color: "rgba(255,255,255,0.45)" }}>
@@ -455,8 +454,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 11. FOOTER ── */}
-      <footer style={{
+      {/* ── 10. FOOTER ── */}
+      <footer className="m-footer" style={{
         padding: "1.75rem 4rem",
         display: "flex",
         justifyContent: "space-between",

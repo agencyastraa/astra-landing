@@ -51,3 +51,217 @@ body {
   border: none;
   border-radius: 5px;
 }
+
+/* ── CASE STUDIES: layout switching ── */
+.cases-mobile { display: none; }
+.cases-desktop { display: block; }
+
+/* ══════════════════════════════════════════
+   MOBILE  ≤ 768px
+   Desktop no cambia — solo overrides aquí
+══════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── NAV ── */
+  .m-nav {
+    padding: 1rem 1.25rem !important;
+  }
+  .m-nav img {
+    height: 30px !important;
+  }
+  .m-nav-cta {
+    font-size: 0.8rem !important;
+    padding: 0.6rem 1rem !important;
+    border-radius: 6px !important;
+  }
+
+  /* ── HERO ── */
+  .m-hero {
+    padding: 2.75rem 1.25rem 2.5rem !important;
+    text-align: left !important;
+  }
+  /* eyebrow pill: smaller, left */
+  .m-hero > div:first-child {
+    font-size: 0.62rem !important;
+    padding: 0.35rem 0.85rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  /* h1 */
+  .m-hero h1 {
+    font-size: clamp(2.4rem, 9vw, 3.2rem) !important;
+    margin-bottom: 1.25rem !important;
+  }
+  /* subtext */
+  .m-hero-sub {
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+    margin: 0 0 1.75rem !important;
+    max-width: 100% !important;
+  }
+  /* note below button */
+  .m-hero > p:last-child {
+    text-align: left;
+    font-size: 0.72rem !important;
+  }
+
+  /* ── FULL-WIDTH BUTTONS ── */
+  .m-btn-full {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 1rem !important;
+    padding: 1rem 1rem !important;
+    border-radius: 8px !important;
+    min-height: 52px;
+  }
+
+  /* ── TRUST BAR: 2×2 grid ── */
+  .m-trust {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0 !important;
+    padding: 0 !important;
+  }
+  .m-trust-stat {
+    padding: 1.25rem 1rem !important;
+    border-bottom: 0.5px solid rgba(255,255,255,0.06) !important;
+    border-right: 0.5px solid rgba(255,255,255,0.06) !important;
+  }
+  .m-trust-stat > div:first-child {
+    font-size: 1.6rem !important;
+  }
+  .m-trust-divider {
+    display: none !important;
+  }
+
+  /* ── LOGOS ── */
+  .m-logos {
+    padding: 2rem 1.25rem !important;
+  }
+  .m-logos-grid {
+    gap: 0.75rem !important;
+  }
+  .m-logos-grid > div {
+    width: 90px !important;
+    height: 36px !important;
+  }
+
+  /* ── ALL CONTENT SECTIONS ── */
+  .m-section {
+    padding: 3rem 1.25rem !important;
+  }
+  /* inner max-width containers: remove horizontal auto margin constraint */
+  .m-section > div {
+    max-width: 100% !important;
+  }
+  /* headings */
+  .m-section h2 {
+    font-size: clamp(1.6rem, 7vw, 2.2rem) !important;
+    margin-bottom: 1.5rem !important;
+  }
+  /* body text: comfortable line length */
+  .m-section p {
+    font-size: 0.95rem !important;
+    line-height: 1.75 !important;
+  }
+
+  /* ── CASE STUDIES: swap layouts ── */
+  .cases-desktop { display: none !important; }
+  .cases-mobile  { display: block !important; }
+  .m-cases {
+    padding: 3rem 1.25rem !important;
+    overflow: visible !important;
+  }
+  .m-cases h2 {
+    font-size: clamp(1.6rem, 7vw, 2.2rem) !important;
+  }
+  /* header: stack vertically on mobile */
+  .cases-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .cases-sub {
+    text-align: left !important;
+    max-width: 100% !important;
+  }
+  /* pill selector: hide scrollbar visually */
+  .cases-pills {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .cases-pills::-webkit-scrollbar {
+    display: none;
+  }
+  /* Force ALL case-mobile children & descendants: no clipping */
+  .cases-mobile,
+  .cases-mobile * {
+    overflow: visible !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    max-height: none !important;
+    text-overflow: unset !important;
+  }
+  /* Re-allow horizontal scroll on pills only */
+  .cases-pills {
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+  }
+  /* Ensure text wraps properly on mobile */
+  .cases-mobile div,
+  .cases-mobile p,
+  .cases-mobile span {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+  }
+  /* Let pill text stay on one line */
+  .cases-pills button {
+    white-space: nowrap !important;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .m-testi-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* ── PROCESS ── */
+  .m-process-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+  .m-process-grid > div {
+    padding: 1.5rem 0 !important;
+    border-top: 1px solid var(--g200) !important;
+    border-bottom: none !important;
+  }
+  .m-process-grid > div:first-child {
+    padding-top: 0 !important;
+    border-top: none !important;
+  }
+
+  /* ── CTA ── */
+  .m-cta {
+    padding: 3.5rem 1.25rem !important;
+    text-align: left !important;
+  }
+  .m-cta h2 {
+    font-size: clamp(1.8rem, 8vw, 2.8rem) !important;
+    line-height: 1.1 !important;
+    margin-bottom: 1rem !important;
+  }
+  .m-cta > div > p:last-child {
+    text-align: left;
+    font-size: 0.7rem !important;
+    margin-top: 1rem !important;
+  }
+
+  /* ── FOOTER ── */
+  .m-footer {
+    padding: 1.5rem 1.25rem !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    text-align: center !important;
+  }
+}
