@@ -12,7 +12,7 @@ const cases = [
     client: "IDACA",
     tag: "Medical Imaging · 9 Locations · USA",
     before:
-      "You're generating $809K/month across 9 locations — but you have no idea which ones are actually driving the revenue. Budget gets spread evenly, nothing moves, and growth has been flat for 6 months. You keep paying for reports full of clicks and impressions that don't tell you anything useful.",
+      "IDACA was generating $809K/month across 9 locations — but had no visibility into which ones were actually driving revenue. Budget was spread evenly across all of them, nothing moved, and growth had been flat for 6 months. They kept paying for reports full of clicks and impressions that didn't tell them anything useful.",
     badge: null,
     bigNum: "$1.12M",
     bigLabel: "Monthly revenue in 90 days — up from $809K",
@@ -32,7 +32,7 @@ const cases = [
     client: "OneTool",
     tag: "Construction E-commerce · USA",
     before:
-      "You're doing 35–40 orders a day and spending $65K/year on ads that aren't scaling. Every time you try to push more budget, your cost per purchase goes up. The creative's gone stale, the audiences are burned out, and you're starting to wonder if paid media even works for your category.",
+      "OneTool was doing 35–40 orders a day and spending $65K/year on ads that weren't scaling. Every time they pushed more budget, cost per purchase went up. Creative had gone stale, audiences were burned out, and the question was whether paid media even worked in their category.",
     badge: "12-month period",
     bigNum: "8.4x",
     bigLabel: "$65K spend → $549K revenue over 1 year",
@@ -53,7 +53,7 @@ const cases = [
     client: "Tu Proyecto Fitness",
     tag: "Gym · B2B High Ticket · LATAM",
     before:
-      "You've got a strong high-ticket offer. But your pipeline runs entirely on referrals and word of mouth — which means growth is capped by how many conversations you can have. You've tried paid ads before, but they brought in leads that weren't qualified and wasted your team's time.",
+      "Tu Proyecto Fitness had a strong high-ticket offer — but their pipeline ran entirely on referrals and word of mouth. Growth was capped by how many conversations their team could have. They'd tried paid ads before, but the leads that came in weren't qualified and ended up wasting their team's time.",
     badge: null,
     bigNum: "38x",
     bigLabel: "ROAS — $6K spend → $230K revenue",
@@ -73,7 +73,7 @@ const cases = [
     client: "Xcore.fit",
     tag: "Gym SaaS · 12 Countries",
     before:
-      "You're operating in 12 countries but almost every new client comes from a referral or a flight your sales team took. Growth is real — but it's completely dependent on human effort. There's no system. If your team stops moving, your pipeline stops moving.",
+      "Xcore.fit was operating in 12 countries — but almost every new client came from a referral or a flight their sales team took. Growth was real, but completely dependent on human effort. No system in place. If the team stopped moving, the pipeline stopped moving.",
     badge: null,
     bigNum: "8–12",
     bigLabel: "New gyms/month — across multiple countries simultaneously",
@@ -166,7 +166,7 @@ export default function CaseStudies() {
               <div style={{ fontFamily: fd, fontSize: "1.8rem", fontWeight: 900, textTransform: "uppercase", color: "var(--white)", lineHeight: 1, marginBottom: "0.25rem" }}>{c.client}</div>
               <div style={{ fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: "2rem", fontWeight: 300 }}>{c.tag}</div>
               <div style={{ background: "rgba(255,255,255,0.04)", borderRadius: 6, padding: "1.25rem 1.5rem", borderLeft: "2px solid rgba(241,42,41,0.4)" }}>
-                <div style={{ fontSize: "0.68rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "0.6rem", fontWeight: 500 }}>Sound familiar?</div>
+                <div style={{ fontSize: "0.68rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "0.6rem", fontWeight: 500 }}>Before Astra</div>
                 <p style={{ fontSize: "0.88rem", fontWeight: 300, lineHeight: 1.7, color: "rgba(255,255,255,0.7)" }}>{c.before}</p>
               </div>
             </div>

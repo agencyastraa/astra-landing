@@ -20,7 +20,7 @@ export default function Home() {
         zIndex: 100,
       }}>
         <div>
-          <img src="/AA_Transparent_-_DARK_RED.png" alt="Astra Agency" style={{ height: 36, filter: "brightness(0)" }} />
+          <img src="/logo-astra.png" alt="Astra Agency" style={{ height: 70, mixBlendMode: "multiply" }} />
         </div>
         <button className="m-nav-cta" style={{
           fontFamily: fb,
@@ -32,7 +32,7 @@ export default function Home() {
           border: "none",
           borderRadius: 5,
         }}>
-          Get a free audit →
+          Get an audit →
         </button>
       </nav>
 
@@ -90,7 +90,7 @@ export default function Home() {
         </p>
 
         <button className="btn-primary m-btn-full">
-          See exactly where your money is going — free
+          See exactly where your money is going
         </button>
         <p style={{ marginTop: "0.9rem", fontSize: "0.75rem", color: "var(--g400)" }}>
           No commitment. No agency pitch. Just answers.
@@ -128,49 +128,43 @@ export default function Home() {
       </div>
 
       {/* ── 4. LOGOS ── */}
-      <section className="m-logos" style={{
-        padding: "3rem 4rem",
-        background: "var(--white)",
-        borderBottom: "0.5px solid var(--g200)",
-      }}>
-        <p style={{
-          fontSize: "0.68rem",
-          letterSpacing: "0.14em",
-          textTransform: "uppercase",
-          color: "var(--g400)",
-          textAlign: "center",
-          marginBottom: "2rem",
-          fontWeight: 500,
-        }}>
-          Trusted by brands across USA &amp; Europe
-        </p>
-        <div className="m-logos-grid" style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "2.5rem",
-          flexWrap: "wrap",
-          maxWidth: 960,
-          margin: "0 auto",
-        }}>
-          {Array.from({ length: 6 }).map((_, i) => (
-            <div key={i} style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: 120,
-              height: 44,
-              border: "0.5px dashed var(--g200)",
-              borderRadius: 6,
-              background: "var(--g100)",
+      {(() => {
+        const logos = [
+          { src: "/logo-1.png", alt: "Client logo" },
+          { src: "/logo-2.png", alt: "Client logo", height: 90 },
+          { src: "/logo-3.png", alt: "Client logo" },
+          { src: "/logo-4.png", alt: "Client logo" },
+          { src: "/logo-5.png", alt: "Client logo", height: 96 },
+        ];
+        return (
+          <section className="m-logos" style={{
+            padding: "3rem 0",
+            background: "var(--white)",
+            borderBottom: "0.5px solid var(--g200)",
+          }}>
+            <p style={{
+              fontSize: "0.68rem",
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: "var(--g400)",
+              textAlign: "center",
+              marginBottom: "2.25rem",
+              fontWeight: 500,
             }}>
-              <span style={{ fontSize: "0.62rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--g400)", fontWeight: 500 }}>
-                Logo
-              </span>
+              Trusted by brands
+            </p>
+            <div className="marquee-outer">
+              <div className="marquee-track">
+                {[...logos, ...logos].map((logo, i) => (
+                  <div key={i} className="marquee-logo">
+                    <img src={logo.src} alt={logo.alt} style={logo.height ? { height: logo.height } : undefined} />
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
+          </section>
+        );
+      })()}
 
       {/* ── 5. PROBLEM ── */}
       <section className="m-section" style={{
@@ -463,7 +457,7 @@ export default function Home() {
         background: "var(--black)",
         borderTop: "0.5px solid rgba(255,255,255,0.06)",
       }}>
-        <img src="/AA_Transparent_-_DARK_RED.png" alt="Astra Agency" style={{ height: 28, filter: "brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(320deg)" }} />
+        <img src="/logo-astra.png" alt="Astra Agency" style={{ height: 90, filter: "brightness(0) invert(1)" }} />
         <p style={{ fontSize: "0.72rem", color: "rgba(255,255,255,0.3)" }}>
           © 2025 Astra Agency. All rights reserved.
         </p>
