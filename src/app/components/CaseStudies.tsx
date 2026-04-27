@@ -92,8 +92,8 @@ export default function CaseStudies() {
 
   return (
     <section
+      className="section-pad"
       style={{
-        padding: "7rem 4rem",
         background: "var(--black)",
         borderTop: "0.5px solid rgba(255,255,255,0.06)",
       }}
@@ -113,7 +113,7 @@ export default function CaseStudies() {
           <h2
             style={{
               fontFamily: "var(--font-display), sans-serif",
-              fontSize: "clamp(2rem, 4vw, 3rem)",
+              fontSize: "clamp(1.8rem, 4vw, 3rem)",
               fontWeight: 800,
               textTransform: "uppercase",
               color: "var(--white)",
@@ -123,6 +123,7 @@ export default function CaseStudies() {
             Real accounts.<br />Real numbers.
           </h2>
           <p
+            className="cases-header-sub"
             style={{
               fontSize: "0.82rem",
               color: "rgba(255,255,255,0.45)",
@@ -138,14 +139,7 @@ export default function CaseStudies() {
         {/* Tabs */}
         <div
           role="tablist"
-          style={{
-            display: "flex",
-            border: "0.5px solid rgba(255,255,255,0.1)",
-            borderRadius: 8,
-            overflow: "hidden",
-            marginBottom: "2rem",
-            background: "rgba(255,255,255,0.04)",
-          }}
+          className="case-tabs"
         >
           {cases.map((cs, i) => (
             <button
@@ -186,16 +180,7 @@ export default function CaseStudies() {
         </div>
 
         {/* Panel */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 1,
-            background: "rgba(255,255,255,0.06)",
-            borderRadius: 8,
-            overflow: "hidden",
-          }}
-        >
+        <div className="case-panel">
           {/* Left */}
           <div style={{ background: "#1a1614", padding: "2.5rem 2.25rem" }}>
             <p

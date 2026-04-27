@@ -8,21 +8,8 @@ export default function Home() {
     <div style={{ fontFamily: fb }}>
 
       {/* ── 1. NAV ── */}
-      <nav style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: "1.25rem 4rem",
-        borderBottom: "0.5px solid var(--g200)",
-        background: "var(--white)",
-        position: "sticky",
-        top: 0,
-        zIndex: 100,
-      }}>
-        <div>
-          {/* Replace with: <img src="/astra-logo.svg" alt="Astra Agency" style={{ height: 36 }} /> */}
-          <img src="/AA_Transparent_-_DARK_RED.png" alt="Astra Agency" style={{ height: 36, filter: "brightness(0)" }} />
-        </div>
+      <nav className="nav-wrap">
+        <img src="/AA_Transparent_-_DARK_RED.png" alt="Astra Agency" style={{ height: 32, filter: "brightness(0)" }} />
         <button style={{
           fontFamily: fb,
           fontSize: "0.85rem",
@@ -32,18 +19,14 @@ export default function Home() {
           color: "var(--white)",
           border: "none",
           borderRadius: 5,
+          whiteSpace: "nowrap",
         }}>
           Get a free audit →
         </button>
       </nav>
 
       {/* ── 2. HERO ── */}
-      <section style={{
-        padding: "7rem 4rem 6rem",
-        maxWidth: 960,
-        margin: "0 auto",
-        textAlign: "center",
-      }}>
+      <section className="section-pad" style={{ maxWidth: 960, margin: "0 auto", textAlign: "center" }}>
         <div style={{
           display: "inline-flex",
           alignItems: "center",
@@ -65,7 +48,7 @@ export default function Home() {
 
         <h1 style={{
           fontFamily: fd,
-          fontSize: "clamp(3rem, 6.5vw, 5rem)",
+          fontSize: "clamp(2.6rem, 6.5vw, 5rem)",
           fontWeight: 900,
           lineHeight: 1.0,
           letterSpacing: "-0.01em",
@@ -99,17 +82,7 @@ export default function Home() {
       </section>
 
       {/* ── 3. TRUST BAR ── */}
-      <div style={{
-        borderTop: "0.5px solid var(--g200)",
-        borderBottom: "0.5px solid var(--g200)",
-        padding: "1.75rem 4rem",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "3rem",
-        flexWrap: "wrap",
-        background: "var(--black)",
-      }}>
+      <div className="trust-bar">
         {[
           { num: "4 Years", lbl: "Operating" },
           { num: "$500K+", lbl: "Ad spend managed" },
@@ -121,19 +94,13 @@ export default function Home() {
               <div style={{ fontFamily: fd, fontSize: "1.8rem", fontWeight: 800, textTransform: "uppercase", color: "var(--red)" }}>{s.num}</div>
               <div style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.4)", marginTop: 2, letterSpacing: "0.1em", textTransform: "uppercase" }}>{s.lbl}</div>
             </div>
-            {i < arr.length - 1 && (
-              <div style={{ width: "0.5px", height: "2rem", background: "rgba(255,255,255,0.1)" }} />
-            )}
+            {i < arr.length - 1 && <div className="trust-divider" />}
           </div>
         ))}
       </div>
 
       {/* ── 4. LOGOS ── */}
-      <section style={{
-        padding: "3rem 4rem",
-        background: "var(--white)",
-        borderBottom: "0.5px solid var(--g200)",
-      }}>
+      <section className="section-pad-sm" style={{ background: "var(--white)", borderBottom: "0.5px solid var(--g200)" }}>
         <p style={{
           fontSize: "0.68rem",
           letterSpacing: "0.14em",
@@ -145,22 +112,14 @@ export default function Home() {
         }}>
           Trusted by brands across USA &amp; Europe
         </p>
-        <div style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "2.5rem",
-          flexWrap: "wrap",
-          maxWidth: 960,
-          margin: "0 auto",
-        }}>
+        <div className="logos-grid">
           {Array.from({ length: 6 }).map((_, i) => (
             <div key={i} style={{
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              width: 120,
-              height: 44,
+              width: 110,
+              height: 40,
               border: "0.5px dashed var(--g200)",
               borderRadius: 6,
               background: "var(--g100)",
@@ -174,16 +133,12 @@ export default function Home() {
       </section>
 
       {/* ── 5. PROBLEM ── */}
-      <section style={{
-        padding: "7rem 4rem",
-        borderTop: "0.5px solid var(--g200)",
-        background: "var(--off)",
-      }}>
+      <section className="section-pad" style={{ borderTop: "0.5px solid var(--g200)", background: "var(--off)" }}>
         <div style={{ maxWidth: 740, margin: "0 auto" }}>
           <p className="section-label">The real problem</p>
           <h2 style={{
             fontFamily: fd,
-            fontSize: "clamp(2rem, 4vw, 3rem)",
+            fontSize: "clamp(1.8rem, 4vw, 3rem)",
             fontWeight: 800,
             lineHeight: 1.15,
             textTransform: "uppercase",
@@ -252,20 +207,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 7. CASE STUDIES ── */}
+      {/* ── 6. CASE STUDIES ── */}
       <CaseStudies />
 
-      {/* ── 8. TESTIMONIALS ── */}
-      <section style={{
-        padding: "7rem 4rem",
-        background: "var(--g100)",
-        borderTop: "0.5px solid var(--g200)",
-      }}>
+      {/* ── 7. TESTIMONIALS ── */}
+      <section className="section-pad" style={{ background: "var(--g100)", borderTop: "0.5px solid var(--g200)" }}>
         <div style={{ maxWidth: 960, margin: "0 auto" }}>
           <p className="section-label">What clients say</p>
           <h2 style={{
             fontFamily: fd,
-            fontSize: "clamp(2rem, 4vw, 3rem)",
+            fontSize: "clamp(1.8rem, 4vw, 3rem)",
             fontWeight: 800,
             textTransform: "uppercase",
             marginBottom: "0.4rem",
@@ -288,7 +239,7 @@ export default function Home() {
           }}>
             ⚠ Add real client quotes
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1rem" }}>
+          <div className="testi-grid">
             {[
               {
                 quote: "Before Astra, we were spending $10K a month with no idea what was working. Within 60 days we crossed $1M in monthly revenue. The clarity alone was worth it.",
@@ -343,17 +294,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 9. HOW IT WORKS ── */}
-      <section style={{
-        padding: "7rem 4rem",
-        background: "var(--white)",
-        borderTop: "0.5px solid var(--g200)",
-      }}>
+      {/* ── 8. HOW IT WORKS ── */}
+      <section className="section-pad" style={{ background: "var(--white)", borderTop: "0.5px solid var(--g200)" }}>
         <div style={{ maxWidth: 960, margin: "0 auto" }}>
           <p className="section-label">How it works</p>
           <h2 style={{
             fontFamily: fd,
-            fontSize: "clamp(2rem, 4vw, 3rem)",
+            fontSize: "clamp(1.8rem, 4vw, 3rem)",
             fontWeight: 800,
             textTransform: "uppercase",
             marginBottom: "3.5rem",
@@ -361,7 +308,7 @@ export default function Home() {
           }}>
             Three phases. One goal: your revenue.
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2.5rem" }}>
+          <div className="process-grid">
             {[
               {
                 phase: "Phase 01",
@@ -382,19 +329,8 @@ export default function Home() {
                 items: ["Campaign optimization", "Segmentation refinement", "Budget reallocation", "Creative iteration", "Sales process evaluation"],
               },
             ].map((step, i) => (
-              <div key={i} style={{
-                paddingTop: "1rem",
-                borderTop: "2px solid var(--g200)",
-                position: "relative",
-              }}>
-                <div style={{
-                  position: "absolute",
-                  top: -2,
-                  left: 0,
-                  width: 40,
-                  height: 2,
-                  background: "var(--red)",
-                }} />
+              <div key={i} style={{ paddingTop: "1rem", borderTop: "2px solid var(--g200)", position: "relative" }}>
+                <div style={{ position: "absolute", top: -2, left: 0, width: 40, height: 2, background: "var(--red)" }} />
                 <div style={{ fontFamily: fd, fontSize: "0.68rem", fontWeight: 800, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--red)", marginBottom: "0.75rem" }}>
                   {step.phase}
                 </div>
@@ -418,19 +354,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 10. CTA ── */}
-      <section style={{
-        background: "var(--red)",
-        padding: "8rem 4rem",
-        textAlign: "center",
-      }}>
+      {/* ── 9. CTA ── */}
+      <section className="section-pad" style={{ background: "var(--red)", textAlign: "center" }}>
         <div style={{ maxWidth: 640, margin: "0 auto" }}>
           <p style={{ fontSize: "0.68rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: "1.25rem", fontWeight: 500 }}>
             Free account audit
           </p>
           <h2 style={{
             fontFamily: fd,
-            fontSize: "clamp(2.4rem, 5vw, 3.8rem)",
+            fontSize: "clamp(2rem, 5vw, 3.8rem)",
             fontWeight: 900,
             textTransform: "uppercase",
             color: "var(--white)",
@@ -455,15 +387,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 11. FOOTER ── */}
-      <footer style={{
-        padding: "1.75rem 4rem",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        background: "var(--black)",
-        borderTop: "0.5px solid rgba(255,255,255,0.06)",
-      }}>
+      {/* ── 10. FOOTER ── */}
+      <footer className="footer-wrap">
         <img src="/AA_Transparent_-_DARK_RED.png" alt="Astra Agency" style={{ height: 28, filter: "brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(320deg)" }} />
         <p style={{ fontSize: "0.72rem", color: "rgba(255,255,255,0.3)" }}>
           © 2025 Astra Agency. All rights reserved.
