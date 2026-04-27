@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+img { display: block; max-width: 100%; }
+button { cursor: pointer; }
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --black:    #110e0c;
+  --red:      #f12a29;
+  --red-dark: #a40002;
+  --white:    #ffffff;
+  --off:      #faf9f8;
+  --g100:     #f2f0ee;
+  --g200:     #e0ddd9;
+  --g400:     #b0aca6;
+  --g600:     #6b6762;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--off);
+  color: var(--black);
+  overflow-x: hidden;
+}
+
+.section-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.section-label--light { color: rgba(255,255,255,0.4); }
+
+.btn-primary {
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.9rem 2.2rem;
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+}
+.btn-white {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 1rem 2.5rem;
+  background: var(--white);
+  color: var(--red);
+  border: none;
+  border-radius: 5px;
 }
