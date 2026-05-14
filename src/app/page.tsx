@@ -20,7 +20,7 @@ export default function Home() {
         zIndex: 100,
       }}>
         <div>
-          <img src="/logo-astra.png" alt="Astra Agency" style={{ height: 70, mixBlendMode: "multiply" }} />
+          <img src="/logo-astra.png" alt="Astra Agency" style={{ height: 52, mixBlendMode: "multiply" }} />
         </div>
         <button className="m-nav-cta" style={{
           fontFamily: fb,
@@ -38,7 +38,7 @@ export default function Home() {
 
       {/* ── 2. HERO ── */}
       <section className="m-hero" style={{
-        padding: "7rem 4rem 6rem",
+        padding: "4rem 4rem 3.5rem",
         maxWidth: 960,
         margin: "0 auto",
         textAlign: "center",
@@ -52,39 +52,39 @@ export default function Home() {
           letterSpacing: "0.14em",
           textTransform: "uppercase",
           color: "var(--g600)",
-          marginBottom: "2.5rem",
+          marginBottom: "1.5rem",
           border: "0.5px solid var(--g200)",
           padding: "0.4rem 1.1rem",
           borderRadius: 100,
           background: "var(--white)",
         }}>
           <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--red)", flexShrink: 0, display: "inline-block" }} />
-          Paid media agency for brands spending $10K+/mo
+          Paid media agency for DTC ecommerce brands spending $10K+/mo on Meta Ads
         </div>
 
         <h1 style={{
           fontFamily: fd,
-          fontSize: "clamp(3rem, 6.5vw, 5rem)",
+          fontSize: "clamp(2.5rem, 5.5vw, 4.2rem)",
           fontWeight: 900,
           lineHeight: 1.0,
           letterSpacing: "-0.01em",
           textTransform: "uppercase",
           color: "var(--black)",
-          marginBottom: "1.75rem",
+          marginBottom: "1.25rem",
         }}>
           Your next{" "}
-          <em style={{ fontStyle: "normal", color: "var(--red)" }}>$1M</em>
+          <em style={{ fontStyle: "normal", color: "var(--red)" }}>$300K</em>
           {" "}in revenue<br />
           is already in your ad account.
         </h1>
 
         <p className="m-hero-sub" style={{
-          fontSize: "1.05rem",
+          fontSize: "0.95rem",
           fontWeight: 300,
-          lineHeight: 1.75,
+          lineHeight: 1.7,
           color: "var(--g600)",
-          maxWidth: 600,
-          margin: "0 auto 2.75rem",
+          maxWidth: 560,
+          margin: "0 auto 2rem",
         }}>
           You&apos;re spending $10K+ a month and you know it&apos;s not performing the way it should. The budget is going somewhere — we help you find exactly where, fix it, and turn it into the growth you&apos;ve been expecting.
         </p>
@@ -92,39 +92,58 @@ export default function Home() {
         <button className="btn-primary m-btn-full">
           See exactly where your money is going
         </button>
-        <p style={{ marginTop: "0.9rem", fontSize: "0.75rem", color: "var(--g400)" }}>
+        <p style={{ marginTop: "0.75rem", fontSize: "0.75rem", color: "var(--g400)" }}>
           No commitment. No agency pitch. Just answers.
         </p>
       </section>
 
       {/* ── 3. TRUST BAR ── */}
       <div className="m-trust" style={{
-        borderTop: "0.5px solid var(--g200)",
-        borderBottom: "0.5px solid var(--g200)",
-        padding: "1.75rem 4rem",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "3rem",
-        flexWrap: "wrap",
+        padding: "2.5rem 4rem",
         background: "var(--black)",
+        borderTop: "0.5px solid rgba(255,255,255,0.06)",
+        borderBottom: "0.5px solid rgba(255,255,255,0.06)",
       }}>
-        {[
-          { num: "4 Years", lbl: "Operating" },
-          { num: "$500K+", lbl: "Ad spend managed" },
-          { num: "4.8x", lbl: "Average ROAS" },
-          { num: "15+", lbl: "Clients scaled" },
-        ].map((s, i, arr) => (
-          <div key={i} style={{ display: "contents" }}>
-            <div className="m-trust-stat" style={{ textAlign: "center" }}>
-              <div style={{ fontFamily: fd, fontSize: "1.8rem", fontWeight: 800, textTransform: "uppercase", color: "var(--red)" }}>{s.num}</div>
-              <div style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.4)", marginTop: 2, letterSpacing: "0.1em", textTransform: "uppercase" }}>{s.lbl}</div>
+        <div style={{
+          maxWidth: 960,
+          margin: "0 auto",
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
+        }}>
+          {[
+            { num: "15+", lbl: "DTC Brands Scaled" },
+            { num: "50%", lbl: "Average CPA Reduction" },
+            { num: "2.8x", lbl: "Average Revenue Growth" },
+            { num: "30 Days", lbl: "To first results" },
+          ].map((s, i, arr) => (
+            <div key={i} className="m-trust-stat" style={{
+              padding: "1.25rem 1.5rem",
+              borderRight: i < arr.length - 1 ? "0.5px solid rgba(255,255,255,0.06)" : "none",
+              display: "flex",
+              flexDirection: "column",
+              gap: "0.25rem",
+            }}>
+              <div style={{
+                fontFamily: fd,
+                fontSize: "2.2rem",
+                fontWeight: 900,
+                color: "var(--white)",
+                lineHeight: 1,
+                letterSpacing: "-0.02em",
+              }}>
+                {s.num}
+                <span style={{ color: "var(--red)" }}>.</span>
+              </div>
+              <div style={{
+                fontSize: "0.68rem",
+                color: "rgba(255,255,255,0.35)",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 400,
+              }}>{s.lbl}</div>
             </div>
-            {i < arr.length - 1 && (
-              <div className="m-trust-divider" style={{ width: "0.5px", height: "2rem", background: "rgba(255,255,255,0.1)" }} />
-            )}
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {/* ── 4. LOGOS ── */}
@@ -135,10 +154,12 @@ export default function Home() {
           { src: "/logo-3.png", alt: "Client logo" },
           { src: "/logo-4.png", alt: "Client logo" },
           { src: "/logo-5.png", alt: "Client logo", height: 96 },
+          { src: "/logo-6.png", alt: "Publimax" },
+          { src: "/logo-7.png", alt: "WiseGuyz" },
         ];
         return (
           <section className="m-logos" style={{
-            padding: "3rem 0",
+            padding: "1.75rem 0",
             background: "var(--white)",
             borderBottom: "0.5px solid var(--g200)",
           }}>
@@ -148,7 +169,7 @@ export default function Home() {
               textTransform: "uppercase",
               color: "var(--g400)",
               textAlign: "center",
-              marginBottom: "2.25rem",
+              marginBottom: "1.25rem",
               fontWeight: 500,
             }}>
               Trusted by brands
@@ -166,9 +187,12 @@ export default function Home() {
         );
       })()}
 
-      {/* ── 5. PROBLEM ── */}
+      {/* ── 5. CASE STUDIES ── */}
+      <CaseStudies />
+
+      {/* ── 6. PROBLEM ── */}
       <section className="m-section" style={{
-        padding: "7rem 4rem",
+        padding: "4.5rem 4rem",
         borderTop: "0.5px solid var(--g200)",
         background: "var(--off)",
       }}>
@@ -180,34 +204,34 @@ export default function Home() {
             fontWeight: 800,
             lineHeight: 1.15,
             textTransform: "uppercase",
-            marginBottom: "2.5rem",
+            marginBottom: "1.5rem",
             color: "var(--black)",
           }}>
             You already tried the agency route. Here&apos;s why it didn&apos;t work.
           </h2>
 
-          <p style={{ fontSize: "1rem", fontWeight: 300, lineHeight: 1.8, color: "var(--g600)", marginBottom: "1.25rem" }}>
+          <p style={{ fontSize: "0.95rem", fontWeight: 300, lineHeight: 1.7, color: "var(--g600)", marginBottom: "0.75rem" }}>
             A senior closed the sale. A junior ran your account. Three months later you were staring at a report full of clicks and impressions wondering where your money went.
           </p>
-          <p style={{ fontSize: "1rem", fontWeight: 300, lineHeight: 1.8, color: "var(--g600)", marginBottom: "1.25rem" }}>
+          <p style={{ fontSize: "0.95rem", fontWeight: 300, lineHeight: 1.7, color: "var(--g600)", marginBottom: "0.75rem" }}>
             You couldn&apos;t get anyone on the phone. Your ad account was in their name. And when you finally walked away, you lost everything — the data, the history, the optimizations. Back to zero.
           </p>
 
           <div style={{
             fontFamily: fd,
-            fontSize: "1.5rem",
+            fontSize: "1.3rem",
             fontWeight: 800,
             textTransform: "uppercase",
             color: "var(--black)",
             borderLeft: "3px solid var(--red)",
             paddingLeft: "1.25rem",
-            margin: "2.5rem 0",
+            margin: "1.5rem 0",
             lineHeight: 1.3,
           }}>
             Sound familiar?
           </div>
 
-          <p style={{ fontSize: "1rem", fontWeight: 300, lineHeight: 1.8, color: "var(--g600)", marginBottom: "1.25rem" }}>
+          <p style={{ fontSize: "0.95rem", fontWeight: 300, lineHeight: 1.7, color: "var(--g600)", marginBottom: "0.75rem" }}>
             After auditing hundreds of accounts, the ads were rarely the problem. What was broken was always the same three things.
           </p>
 
@@ -215,7 +239,7 @@ export default function Home() {
             border: "0.5px solid var(--g200)",
             borderRadius: 8,
             overflow: "hidden",
-            marginTop: "2.5rem",
+            marginTop: "1.5rem",
             background: "var(--white)",
           }}>
             {[
@@ -227,107 +251,84 @@ export default function Home() {
                 display: "flex",
                 alignItems: "flex-start",
                 gap: "1.25rem",
-                padding: "1.5rem 1.75rem",
+                padding: "1.1rem 1.75rem",
                 borderBottom: i < arr.length - 1 ? "0.5px solid var(--g200)" : "none",
               }}>
                 <div style={{ fontFamily: fd, fontSize: "0.75rem", fontWeight: 800, letterSpacing: "0.1em", color: "var(--red)", minWidth: 24, paddingTop: 2 }}>{item.n}</div>
                 <div>
-                  <div style={{ fontFamily: fd, fontWeight: 800, fontSize: "1.05rem", textTransform: "uppercase", marginBottom: "0.3rem", letterSpacing: "0.02em" }}>{item.title}</div>
-                  <div style={{ fontSize: "0.875rem", fontWeight: 300, color: "var(--g600)", lineHeight: 1.65 }}>{item.desc}</div>
+                  <div style={{ fontFamily: fd, fontWeight: 800, fontSize: "1.05rem", textTransform: "uppercase", marginBottom: "0.2rem", letterSpacing: "0.02em" }}>{item.title}</div>
+                  <div style={{ fontSize: "0.84rem", fontWeight: 300, color: "var(--g600)", lineHeight: 1.6 }}>{item.desc}</div>
                 </div>
               </div>
             ))}
           </div>
 
-          <p style={{ fontSize: "1rem", fontWeight: 300, lineHeight: 1.8, color: "var(--g600)", marginTop: "2rem" }}>
+          <p style={{ fontSize: "0.95rem", fontWeight: 300, lineHeight: 1.7, color: "var(--g600)", marginTop: "1.25rem" }}>
             That&apos;s what Astra fixes. Not just the campaigns — the entire revenue equation behind them.
           </p>
         </div>
       </section>
 
-      {/* ── 6. CASE STUDIES ── */}
-      <CaseStudies />
-
       {/* ── 7. TESTIMONIALS ── */}
       <section className="m-section" style={{
-        padding: "7rem 4rem",
-        background: "var(--g100)",
-        borderTop: "0.5px solid var(--g200)",
+        padding: "4rem 4rem",
+        background: "var(--black)",
+        borderTop: "0.5px solid rgba(255,255,255,0.06)",
       }}>
         <div style={{ maxWidth: 960, margin: "0 auto" }}>
-          <p className="section-label">What clients say</p>
+          <p className="section-label" style={{ color: "rgba(255,255,255,0.4)" }}>What clients say</p>
           <h2 style={{
             fontFamily: fd,
             fontSize: "clamp(2rem, 4vw, 3rem)",
             fontWeight: 800,
             textTransform: "uppercase",
-            marginBottom: "0.4rem",
-            color: "var(--black)",
+            marginBottom: "1.5rem",
+            color: "var(--white)",
           }}>
             Testimonials
           </h2>
-          <div style={{
-            display: "inline-block",
-            fontSize: "0.65rem",
-            color: "var(--red)",
-            fontWeight: 500,
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-            background: "rgba(241,42,41,0.08)",
-            padding: "3px 10px",
-            borderRadius: 4,
-            marginBottom: "2.5rem",
-            marginTop: "0.5rem",
-          }}>
-            ⚠ Add real client quotes
-          </div>
           <div className="m-testi-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1rem" }}>
             {[
               {
                 quote: "Before Astra, we were spending $10K a month with no idea what was working. Within 60 days we crossed $1M in monthly revenue. The clarity alone was worth it.",
-                initials: "IN",
-                name: "[Client name]",
-                role: "[Title] · IDACA",
+                photo: "/testimonial-idaca.png",
+                name: "Leyse Orlando",
+                role: "General Manager · IDACA · Venezuela",
               },
               {
                 quote: "We went from 35 orders a day to over 100 in 75 days. We had to pause because we ran out of inventory — a problem I'd never had before.",
-                initials: "IN",
-                name: "[Client name]",
-                role: "[Title] · OneTool",
+                photo: "/testimonial-onetool.png",
+                name: "Oswaldo Arias",
+                role: "CEO · OneTool · Colombia",
               },
               {
                 quote: "We were completely dependent on referrals. Now we have 8 to 12 new gyms signing every month across 12 countries — on autopilot.",
-                initials: "IN",
-                name: "[Client name]",
-                role: "[Title] · Xcore.fit",
+                photo: "/testimonial-xcore.png",
+                name: "José Quintero",
+                role: "CEO · Xcore.fit · Mexico",
               },
             ].map((t, i) => (
               <div key={i} style={{
-                background: "var(--white)",
-                border: "0.5px solid var(--g200)",
+                background: "#1a1614",
+                border: "0.5px solid rgba(255,255,255,0.08)",
                 borderRadius: 8,
-                padding: "1.75rem 1.5rem",
+                padding: "1.25rem 1.25rem",
                 display: "flex",
                 flexDirection: "column",
-                gap: "1rem",
+                gap: "0.75rem",
               }}>
-                <div style={{ fontFamily: fd, fontSize: "2.5rem", fontWeight: 900, color: "var(--red)", lineHeight: 0.8, marginBottom: "0.5rem" }}>&ldquo;</div>
-                <p style={{ fontSize: "0.88rem", fontWeight: 300, lineHeight: 1.7, color: "var(--g600)", fontStyle: "italic", flex: 1 }}>
+                <div style={{ fontFamily: fd, fontSize: "2rem", fontWeight: 900, color: "var(--red)", lineHeight: 0.8, marginBottom: "0.25rem" }}>&ldquo;</div>
+                <p style={{ fontSize: "0.84rem", fontWeight: 300, lineHeight: 1.65, color: "rgba(255,255,255,0.65)", fontStyle: "italic", flex: 1 }}>
                   {t.quote}
                 </p>
-                <div style={{ height: "0.5px", background: "var(--g200)" }} />
+                <div style={{ height: "0.5px", background: "rgba(255,255,255,0.08)" }} />
                 <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                  <div style={{
-                    width: 36, height: 36, borderRadius: "50%", background: "var(--g200)",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    fontFamily: fd, fontSize: "0.7rem", fontWeight: 800, color: "var(--g400)",
-                    flexShrink: 0, textTransform: "uppercase",
-                  }}>
-                    {t.initials}
-                  </div>
+                  <img src={t.photo} alt={t.name} style={{
+                    width: 36, height: 36, borderRadius: "50%", objectFit: "cover", flexShrink: 0,
+                  }} />
                   <div>
-                    <div style={{ fontWeight: 500, fontSize: "0.85rem", color: "var(--black)" }}>{t.name}</div>
-                    <div style={{ fontSize: "0.72rem", color: "var(--g400)" }}>{t.role}</div>
+                    <div style={{ fontWeight: 500, fontSize: "0.82rem", color: "var(--white)" }}>{t.name}</div>
+                    <div style={{ fontSize: "0.68rem", color: "rgba(255,255,255,0.35)" }}>{t.role}</div>
                   </div>
                 </div>
               </div>
@@ -336,9 +337,110 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 8. HOW IT WORKS ── */}
+      {/* ── 8. COMPARISON ── */}
       <section className="m-section" style={{
-        padding: "7rem 4rem",
+        padding: "4.5rem 4rem",
+        background: "var(--white)",
+        borderTop: "0.5px solid var(--g200)",
+      }}>
+        <div style={{ maxWidth: 960, margin: "0 auto" }}>
+          <p className="section-label">Why Astra</p>
+          <h2 style={{
+            fontFamily: fd,
+            fontSize: "clamp(2rem, 4vw, 3rem)",
+            fontWeight: 800,
+            textTransform: "uppercase",
+            color: "var(--black)",
+            lineHeight: 1.1,
+            marginBottom: "2rem",
+          }}>
+            Not all agencies<br />are the same.
+          </h2>
+
+          <div className="m-comparison-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
+            {/* Other agencies card */}
+            <div style={{
+              border: "0.5px solid var(--g200)",
+              borderRadius: 10,
+              overflow: "hidden",
+            }}>
+              <div style={{
+                padding: "0.85rem 1.5rem",
+                borderBottom: "0.5px solid var(--g200)",
+                background: "var(--off)",
+              }}>
+                <div style={{ fontSize: "0.65rem", letterSpacing: "0.12em", textTransform: "uppercase", fontWeight: 600, color: "var(--g400)" }}>Other agencies</div>
+              </div>
+              {[
+                "A junior you never met runs your account",
+                "Monthly PDF full of vanity metrics",
+                "They own your ad account — you leave with nothing",
+                "3 months of \"testing\" before anything moves",
+                "Generic playbook from their last client",
+                "You're one of 40+ clients in a queue",
+                "Still running ads the same way they did 5 years ago",
+              ].map((item, i, arr) => (
+                <div key={i} style={{
+                  padding: "0.85rem 1.5rem",
+                  borderBottom: i < arr.length - 1 ? "0.5px solid var(--g200)" : "none",
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "0.65rem",
+                  background: "var(--white)",
+                }}>
+                  <span style={{ fontSize: "0.72rem", color: "var(--g300)", flexShrink: 0, marginTop: 2 }}>&#x2715;</span>
+                  <span style={{ fontSize: "0.82rem", fontWeight: 300, color: "var(--g400)", lineHeight: 1.55 }}>{item}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Astra card */}
+            <div style={{
+              border: "2px solid var(--red)",
+              borderRadius: 10,
+              overflow: "hidden",
+              position: "relative",
+            }}>
+              <div style={{
+                padding: "0.85rem 1.5rem",
+                borderBottom: "0.5px solid rgba(241,42,41,0.15)",
+                background: "rgba(241,42,41,0.04)",
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
+              }}>
+                <div style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--red)", flexShrink: 0 }} />
+                <div style={{ fontSize: "0.65rem", letterSpacing: "0.12em", textTransform: "uppercase", fontWeight: 600, color: "var(--red)" }}>Astra Agency</div>
+              </div>
+              {[
+                "The strategist who built your plan runs your account",
+                "Real-time visibility into every dollar spent — with a live dashboard",
+                "Your account, your name, your data — always",
+                "First results within 30 days",
+                "Strategy built around your product, margins, and market",
+                "Small roster — we know your numbers better than you do",
+                "AI-powered optimization — faster insights, sharper creative, better results",
+              ].map((item, i, arr) => (
+                <div key={i} style={{
+                  padding: "0.85rem 1.5rem",
+                  borderBottom: i < arr.length - 1 ? "0.5px solid var(--g200)" : "none",
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "0.65rem",
+                  background: "var(--white)",
+                }}>
+                  <span style={{ fontSize: "0.72rem", color: "var(--red)", flexShrink: 0, marginTop: 2 }}>&#x2713;</span>
+                  <span style={{ fontSize: "0.82rem", fontWeight: 400, color: "var(--black)", lineHeight: 1.55 }}>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 9. HOW IT WORKS ── */}
+      <section className="m-section" style={{
+        padding: "4.5rem 4rem",
         background: "var(--white)",
         borderTop: "0.5px solid var(--g200)",
       }}>
@@ -349,12 +451,12 @@ export default function Home() {
             fontSize: "clamp(2rem, 4vw, 3rem)",
             fontWeight: 800,
             textTransform: "uppercase",
-            marginBottom: "3.5rem",
+            marginBottom: "2rem",
             color: "var(--black)",
           }}>
             Three phases. One goal: your revenue.
           </h2>
-          <div className="m-process-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2.5rem" }}>
+          <div className="m-process-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2rem" }}>
             {[
               {
                 phase: "Phase 01",
@@ -376,7 +478,7 @@ export default function Home() {
               },
             ].map((step, i) => (
               <div key={i} style={{
-                paddingTop: "1rem",
+                paddingTop: "0.75rem",
                 borderTop: "2px solid var(--g200)",
                 position: "relative",
               }}>
@@ -388,18 +490,18 @@ export default function Home() {
                   height: 2,
                   background: "var(--red)",
                 }} />
-                <div style={{ fontFamily: fd, fontSize: "0.68rem", fontWeight: 800, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--red)", marginBottom: "0.75rem" }}>
+                <div style={{ fontFamily: fd, fontSize: "0.68rem", fontWeight: 800, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--red)", marginBottom: "0.5rem" }}>
                   {step.phase}
                 </div>
-                <div style={{ fontFamily: fd, fontSize: "1.4rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.02em", marginBottom: "0.75rem", color: "var(--black)" }}>
+                <div style={{ fontFamily: fd, fontSize: "1.25rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.02em", marginBottom: "0.5rem", color: "var(--black)" }}>
                   {step.title}
                 </div>
-                <p style={{ fontSize: "0.85rem", fontWeight: 300, lineHeight: 1.7, color: "var(--g600)", marginBottom: "0.75rem" }}>
+                <p style={{ fontSize: "0.82rem", fontWeight: 300, lineHeight: 1.6, color: "var(--g600)", marginBottom: "0.5rem" }}>
                   {step.desc}
                 </p>
-                <div style={{ display: "flex", flexDirection: "column", gap: "0.3rem" }}>
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.2rem" }}>
                   {step.items.map((item, j) => (
-                    <div key={j} style={{ fontSize: "0.78rem", color: "var(--g400)", display: "flex", alignItems: "flex-start", gap: 6, fontWeight: 300 }}>
+                    <div key={j} style={{ fontSize: "0.75rem", color: "var(--g400)", display: "flex", alignItems: "flex-start", gap: 6, fontWeight: 300 }}>
                       <span style={{ color: "var(--red)", flexShrink: 0, fontSize: "0.65rem", marginTop: 2 }}>—</span>
                       {item}
                     </div>
@@ -443,7 +545,7 @@ export default function Home() {
             See exactly where your money is going →
           </button>
           <p style={{ marginTop: "1.25rem", fontSize: "0.72rem", color: "rgba(255,255,255,0.45)" }}>
-            Takes 15 minutes. Available for brands spending $10K+/mo in ads.
+            Available for DTC ecommerce brands with physical products spending $8K+/mo on Meta Ads.
           </p>
         </div>
       </section>

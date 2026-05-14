@@ -1,11 +1,32 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 
 const fd = "var(--font-display), sans-serif";
 const fb = "var(--font-body), sans-serif";
 
 const cases = [
+  {
+    tab: "OneTool",
+    industry: "DTC Ecommerce",
+    client: "OneTool",
+    tag: "DTC Ecommerce · Physical Product · LATAM",
+    before:
+      "OneTool was doing 25 orders a day with CPA increasing month over month. The founder was managing ads alone with no visibility into what was actually working. Every time they pushed more budget, cost per purchase went up. Creative had gone stale, audiences were burned out, and growth had completely stalled.",
+    badge: null,
+    bigNum: "70+",
+    bigLabel: "Daily orders in 3.5 months — up from 25",
+    metrics: [
+      { val: "50%", key: "CPA reduction" },
+      { val: "3.5 mo", key: "Timeline" },
+    ],
+    rows: [
+      { k: "Ad spend", v: "$2,500/mo → $5,000/mo" },
+      { k: "Revenue", v: "$4M COP/week → $8-9M COP/week" },
+      { k: "Channel", v: "Meta Ads" },
+      { k: "Industry", v: "DTC Ecommerce — physical product" },
+    ],
+  },
   {
     tab: "IDACA",
     industry: "Medical Imaging",
@@ -24,27 +45,6 @@ const cases = [
       { k: "Ad spend", v: "$10K → $14K/mo" },
       { k: "Timeline", v: "90 days" },
       { k: "Channel", v: "Meta Ads" },
-    ],
-  },
-  {
-    tab: "OneTool",
-    industry: "E-commerce",
-    client: "OneTool",
-    tag: "Construction E-commerce · USA",
-    before:
-      "OneTool was doing 35–40 orders a day and spending $65K/year on ads that weren't scaling. Every time they pushed more budget, cost per purchase went up. Creative had gone stale, audiences were burned out, and the question was whether paid media even worked in their category.",
-    badge: "12-month period",
-    bigNum: "8.4x",
-    bigLabel: "$65K spend → $549K revenue over 1 year",
-    metrics: [
-      { val: "100+", key: "Orders per day" },
-      { val: "75 days", key: "To full scale" },
-    ],
-    rows: [
-      { k: "Daily orders before", v: "35–40/day" },
-      { k: "Daily orders after", v: "100+/day" },
-      { k: "Channel", v: "Meta Ads" },
-      { k: "Side effect", v: "Had to pause — ran out of inventory" },
     ],
   },
   {
@@ -92,11 +92,58 @@ const cases = [
 export default function CaseStudies() {
   const [active, setActive] = useState(0);
   const c = cases[active];
+  const touchStart = useRef(0);
+  const touchEnd = useRef(0);
+
+  const goTo = useCallback((dir: 1 | -1) => {
+    setActive((prev) => {
+      const next = prev + dir;
+      if (next < 0) return cases.length - 1;
+      if (next >= cases.length) return 0;
+      return next;
+    });
+  }, []);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStart.current = e.targetTouches[0].clientX;
+  };
+  const onTouchMove = (e: React.TouchEvent) => {
+    touchEnd.current = e.targetTouches[0].clientX;
+  };
+  const onTouchEnd = () => {
+    const diff = touchStart.current - touchEnd.current;
+    if (Math.abs(diff) > 50) {
+      goTo(diff > 0 ? 1 : -1);
+    }
+  };
+
+  const arrowBtn = (dir: "left" | "right") => (
+    <button
+      onClick={() => goTo(dir === "right" ? 1 : -1)}
+      aria-label={dir === "right" ? "Next case" : "Previous case"}
+      style={{
+        width: 40,
+        height: 40,
+        borderRadius: "50%",
+        border: "1px solid rgba(255,255,255,0.15)",
+        background: "transparent",
+        color: "rgba(255,255,255,0.6)",
+        fontSize: "1rem",
+        cursor: "pointer",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexShrink: 0,
+      }}
+    >
+      {dir === "left" ? "←" : "→"}
+    </button>
+  );
 
   return (
     <section
       style={{
-        padding: "7rem 4rem",
+        padding: "4rem 4rem",
         background: "var(--black)",
         borderTop: "0.5px solid rgba(255,255,255,0.06)",
       }}
@@ -109,7 +156,7 @@ export default function CaseStudies() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "flex-end",
-          marginBottom: "3rem",
+          marginBottom: "1.75rem",
           flexWrap: "wrap",
           gap: "1rem",
         }}>
@@ -135,7 +182,7 @@ export default function CaseStudies() {
         </div>
 
         {/* ══════ DESKTOP LAYOUT ══════ */}
-        <div className="cases-desktop">
+        <div className="cases-desktop" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
           <div role="tablist" style={{
             display: "flex",
             border: "0.5px solid rgba(255,255,255,0.1)",
@@ -195,10 +242,30 @@ export default function CaseStudies() {
               </div>
             </div>
           </div>
+
+          {/* Desktop dots + arrows below card */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", marginTop: "1.5rem" }}>
+            {arrowBtn("left")}
+            <div style={{ display: "flex", gap: "0.5rem" }}>
+              {cases.map((_, i) => (
+                <button key={i} onClick={() => setActive(i)} aria-label={`Go to case ${i + 1}`} style={{
+                  width: active === i ? 24 : 8,
+                  height: 8,
+                  borderRadius: 100,
+                  border: "none",
+                  background: active === i ? "var(--red)" : "rgba(255,255,255,0.15)",
+                  cursor: "pointer",
+                  padding: 0,
+                  transition: "width 0.3s ease, background 0.3s ease",
+                }} />
+              ))}
+            </div>
+            {arrowBtn("right")}
+          </div>
         </div>
 
         {/* ══════ MOBILE LAYOUT ══════ */}
-        <div className="cases-mobile">
+        <div className="cases-mobile" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
 
           {/* Pill selector */}
           <div className="cases-pills" style={{ display: "flex", gap: "0.5rem", marginBottom: "1.5rem", overflowX: "auto", paddingBottom: 4 }}>
@@ -282,6 +349,22 @@ export default function CaseStudies() {
                 <div style={{ fontSize: "0.62rem", color: "rgba(255,255,255,0.3)", fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "0.15rem" }}>{r.k}</div>
                 <div style={{ fontSize: "0.9rem", color: "var(--white)", fontWeight: 500, lineHeight: 1.4 }}>{r.v}</div>
               </div>
+            ))}
+          </div>
+
+          {/* Mobile dots */}
+          <div style={{ display: "flex", justifyContent: "center", gap: "0.5rem", marginTop: "1.25rem" }}>
+            {cases.map((_, i) => (
+              <button key={i} onClick={() => setActive(i)} aria-label={`Go to case ${i + 1}`} style={{
+                width: active === i ? 24 : 8,
+                height: 8,
+                borderRadius: 100,
+                border: "none",
+                background: active === i ? "var(--red)" : "rgba(255,255,255,0.15)",
+                cursor: "pointer",
+                padding: 0,
+                transition: "width 0.3s ease, background 0.3s ease",
+              }} />
             ))}
           </div>
 

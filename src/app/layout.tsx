@@ -16,9 +16,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Astra Agency — Find the revenue you're already leaving on the table",
+  title: "Astra Agency — Meta Ads for DTC Ecommerce Brands",
   description:
-    "Paid media agency for brands spending $10K+/mo. We find your underperforming campaigns, misallocated budget, and creative that almost converts — then scale it.",
+    "Paid media agency for DTC ecommerce brands with physical products spending $8K+/mo on Meta Ads. We find where your ad spend is leaking, fix it, and scale what's actually working.",
 };
 
 export default function RootLayout({
