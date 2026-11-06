@@ -32,7 +32,8 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
       canonical: `/${lang}`,
       languages: { en: "/en", es: "/es", "x-default": "/en" },
     },
-    openGraph: { title: d.meta.title, description: d.meta.description, locale: lang === "es" ? "es_ES" : "en_US" },
+    icons: { icon: "/icon.png", apple: "/icon.png" },
+    openGraph: { title: d.meta.title, description: d.meta.description, locale: lang === "es" ? "es_ES" : "en_US", images: ["/og.png"] },
   };
 }
 
