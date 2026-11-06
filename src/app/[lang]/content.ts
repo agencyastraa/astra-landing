@@ -302,9 +302,9 @@ const en: Dict = {
   },
   hero: {
     badge: "Ad agency for service businesses",
-    l1: "More appointments.",
+    l1: "More bookings.",
     l2: "More clients.",
-    l3: "Every single week.",
+    l3: "Every week.",
     sub: "Instagram and Facebook ads for spas, med spas, salons, dentists and service businesses. We bring in people from your area who reach out",
     subStrong: "ready to book.",
     bullets: [
