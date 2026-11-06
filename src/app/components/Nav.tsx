@@ -46,7 +46,7 @@ export default function Nav({ lang, links, cta, menu, wa, switchLabel }: Props) 
       <div className="nav-inner">
         <a href={`/${lang}#top`} className="nav-logo" aria-label="Astra Agency">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo-astra.png" alt="Astra Agency" />
+          <img src="/logo-astra-wide.png" alt="Astra Agency" />
         </a>
         <nav className="nav-links">
           {links.map((l) => (

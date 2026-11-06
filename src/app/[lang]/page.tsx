@@ -264,7 +264,7 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
       <footer className="foot">
         <div className="wrap foot-inner">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo-astra.png" alt="Astra Agency" className="foot-logo" />
+          <img src="/logo-astra-wide.png" alt="Astra Agency" className="foot-logo" />
           <p>{d.footer}</p>
         </div>
       </footer>
